@@ -4,6 +4,31 @@
     "actions": 
     [
         {
+            "command": "duplicateTab",
+            "keys": "ctrl+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "keys": "ctrl+tab"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            }
+        },
+        {
+            "command": "paste"
+        },
+        {
+            "command": "closePane",
+            "keys": "alt+shift+w"
+        },
+        {
             "command": "unbound",
             "keys": "ctrl+c"
         },
@@ -226,23 +251,9 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
-            }
-        },
-        {
-            "command": 
-            {
-                "action": "newTab"
+                "action": "nextTab"
             },
-            "keys": "ctrl+shift+n"
-        },
-        {
-            "command": "paste"
-        },
-        {
-            "command": "duplicateTab",
-            "keys": "ctrl+shift+d"
+            "keys": "shift+tab"
         },
         {
             "command": 
@@ -252,26 +263,15 @@
             "keys": "alt+shift+f11"
         },
         {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+shift+n"
+        },
+        {
             "command": "toggleFocusMode",
             "keys": "alt+shift+f12"
-        },
-        {
-            "command": 
-            {
-                "action": "prevTab"
-            },
-            "keys": "ctrl+tab"
-        },
-        {
-            "command": 
-            {
-                "action": "nextTab"
-            },
-            "keys": "shift+tab"
-        },
-        {
-            "command": "closePane",
-            "keys": "alt+shift+w"
         }
     ],
     "alwaysOnTop": false,
@@ -281,19 +281,26 @@
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "disableAnimations": false,
+    "experimental.detectURLs": false,
+    "experimental.rendering.forceFullRepaint": true,
     "minimizeToNotificationArea": true,
     "profiles": 
     {
         "defaults": 
         {
+            "backgroundImage": "E:\\MyCloud\\Backup\\\u58c1\u7eb8\\2.png",
+            "backgroundImageOpacity": 0.20000000000000001,
+            "backgroundImageStretchMode": "uniformToFill",
             "closeOnExit": "never",
-            "colorScheme": "shades-of-purple",
+            "colorScheme": "WeiWan-Windows-Terminal",
             "font": 
             {
                 "face": "FuraCode Nerd Font",
                 "size": 14
             },
-            "opacity": 70,
+            "intenseTextStyle": "bright",
+            "opacity": 80,
+            "scrollbarState": "hidden",
             "startingDirectory": "%USERPROFILE%\\Desktop",
             "useAcrylic": true
         },
@@ -313,13 +320,7 @@
             },
             {
                 "closeOnExit": "never",
-                "colorScheme": "shades-of-purple",
                 "cursorColor": "#FFFFFF",
-                "font": 
-                {
-                    "face": "FiraCode Nerd Font",
-                    "size": 14
-                },
                 "guid": "{4d4cc780-cacb-5b6f-a183-29b5f6cdcd23}",
                 "hidden": false,
                 "historySize": 9001,
@@ -328,22 +329,26 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
-                "colorScheme": "shades-of-purple",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
             }
         ]
     },
     "schemes": 
     [
         {
-            "background": "#4C4D4F",
+            "background": "#000000",
             "black": "#0C0C0C",
             "blue": "#0037DA",
             "brightBlack": "#767676",
-            "brightBlue": "#3B78FF",
+            "brightBlue": "#1D4AFF",
             "brightCyan": "#61D6D6",
             "brightGreen": "#16C60C",
             "brightPurple": "#B4009E",
@@ -406,29 +411,6 @@
             "selectionBackground": "#FFFFFF",
             "white": "#BFBFBF",
             "yellow": "#999900"
-        },
-        {
-            "background": "#1D262A",
-            "black": "#435B67",
-            "blue": "#37B6FF",
-            "brightBlack": "#A1B0B8",
-            "brightBlue": "#70CFFF",
-            "brightCyan": "#9AFFE6",
-            "brightGreen": "#ADF7BE",
-            "brightPurple": "#FC669B",
-            "brightRed": "#FC746D",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#FEE16C",
-            "cursorColor": "#EAEAEA",
-            "cyan": "#59FFD1",
-            "foreground": "#E7EBED",
-            "green": "#5CF19E",
-            "name": "MaterialDesignColors",
-            "purple": "#FC226E",
-            "red": "#FC3841",
-            "selectionBackground": "#4E6A78",
-            "white": "#FFFFFF",
-            "yellow": "#FED032"
         },
         {
             "background": "#282C34",
@@ -592,50 +574,27 @@
             "yellow": "#808000"
         },
         {
-            "background": "#3D3D3D",
+            "background": "#152533",
             "black": "#000000",
             "blue": "#6943FF",
-            "brightBlack": "#686868",
-            "brightBlue": "#6871FF",
-            "brightCyan": "#79E8FB",
-            "brightGreen": "#43D426",
+            "brightBlack": "#FFFFFF",
+            "brightBlue": "#328BFF",
+            "brightCyan": "#C4FB9E",
+            "brightGreen": "#47E028",
             "brightPurple": "#FF77FF",
             "brightRed": "#F92A1C",
             "brightWhite": "#FFFFFF",
             "brightYellow": "#F1D000",
             "cursorColor": "#FAD000",
-            "cyan": "#00C5C7",
-            "foreground": "#CCFFD8",
+            "cyan": "#FFA454",
+            "foreground": "#FFF1FB",
             "green": "#3AD900",
-            "name": "shades-of-purple",
+            "name": "WeiWan-Windows-Terminal",
             "purple": "#FF2C70",
             "red": "#D90429",
-            "selectionBackground": "#B362FF",
+            "selectionBackground": "#A3AAFF",
             "white": "#C7C7C7",
             "yellow": "#FFE700"
-        },
-        {
-            "background": "#002B36",
-            "black": "#002B36",
-            "blue": "#268BD2",
-            "brightBlack": "#657B83",
-            "brightBlue": "#839496",
-            "brightCyan": "#D33682",
-            "brightGreen": "#B58900",
-            "brightPurple": "#EEE8D5",
-            "brightRed": "#CB4B16",
-            "brightWhite": "#FDF6E3",
-            "brightYellow": "#586E75",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#2AA198",
-            "foreground": "#93A1A1",
-            "green": "#859900",
-            "name": "wsl2",
-            "purple": "#6C71C4",
-            "red": "#DC322F",
-            "selectionBackground": "#FFFFFF",
-            "white": "#93A1A1",
-            "yellow": "#B58900"
         }
     ],
     "showTabsInTitlebar": true,

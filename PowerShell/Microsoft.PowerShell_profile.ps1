@@ -10,14 +10,13 @@
 # 引入 posh-git
 Import-Module posh-git
 
-# 引入 oh-my-posh
-Import-Module oh-my-posh
+# on-my-posh主题
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\agnosterplus.omp.json" | Invoke-Expression
 
 # 引入 ps-read-line
 Import-Module PSReadLine
 
-# 设置 PowerShell 主题
-Set-PoshPrompt agnosterplus
+
 #------------------------------- Import Modules END   -------------------------------
 
 
@@ -38,7 +37,19 @@ Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 # 设置 Tab 为菜单补全和 Intellisense
 Set-PSReadLineKeyHandler -Key "Tab" -Function MenuComplete
 
-
+#Set the color for Prediction (auto-suggestion)
+Set-PSReadLineOption -Colors @{
+  Command            = 'Magenta'
+  Number             = 'DarkBlue'
+  Member             = 'DarkBlue'
+  Operator           = 'DarkBlue'
+  Type               = 'DarkBlue'
+  Variable           = 'DarkGreen'
+  Parameter          = 'DarkGreen'
+  ContinuationPrompt = 'DarkBlue'
+  Default            = 'DarkBlue'
+  InlinePrediction   = 'DarkGray'
+}
 #-------------------------------  Set Hot-keys END    -------------------------------
 
 
@@ -89,11 +100,18 @@ Set-Alias -Name os-update -Value Update-Packages
 
 # 3. 查看目录 ls & ll
 function ListDirectory {
-	(Get-ChildItem).Name
-	Write-Host("")
+ (Get-ChildItem).Name
+ Write-Host("")
 }
-Set-Alias -Name ls -Value ListDirectory
-Set-Alias -Name ll -Value Get-ChildItem
+
+function ListLsDirectory {
+	C:\Windows\System32\ls.exe $args
+}
+function ListLLDirectory {
+	C:\Windows\System32\ls.exe -l $args
+}
+Set-Alias -Name ls -Value ListLsDirectory
+Set-Alias -Name ll -Value ListLLDirectory
 
 # 4. 打开当前工作目录
 function OpenCurrentFolder {
@@ -120,6 +138,8 @@ function Get-SSH-CONFIGS {
 function GREP-FUNC {
 	$Input | rg $args
 }
+
+
 Set-Alias -Name grep -Value GREP-FUNC
 Set-Alias -Name ssha -Value Get-SSH-CONFIGS
 
